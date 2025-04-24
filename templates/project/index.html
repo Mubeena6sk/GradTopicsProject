@@ -1,0 +1,8 @@
+{% extends "projectbase.html" %}
+{% block content %}
+    <div class="text-center">
+        <h1>Welcome to BookBuddy!</h1>
+        <p class="lead">Track your favorite books, sort them, and visualize your reading habits.</p>
+        <a href="{{ url_for('books') }}" class="btn btn-primary">View Book List</a>
+    </div>
+{% endblock %}

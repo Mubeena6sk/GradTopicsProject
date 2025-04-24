@@ -1,0 +1,34 @@
+{% extends "projectbase.html" %}
+{% block content %}
+    <h2>Your Book Collection</h2>
+    <div class="mb-3">
+        <form method="get" action="{{ url_for('books') }}">
+            <label>Sort by:</label>
+            <select name="sort_by" onchange="this.form.submit()">
+                <option value="title" {{ 'selected' if sort == 'title' else '' }}>Title</option>
+                <option value="author" {{ 'selected' if sort == 'author' else '' }}>Author</option>
+                <option value="rating" {{ 'selected' if sort == 'rating' else '' }}>Rating</option>
+            </select>
+        </form>
+    </div>
+    <div class="row">
+        {% for book in books %}
+        <div class="col-md-4">
+            <div class="card mb-3">
+                {% if book.cover %}
+                    <img src="{{ url_for('static', filename='uploads/' ~ book.cover) }}" class="card-img-top" height="300">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <p class="card-text">Author: {{ book.author }}</p>
+                    <p class="card-text">Rating: ⭐ {{ book.rating }}/5</p>
+                    <a href="{{ url_for('edit', book_id=book.id) }}" class="btn btn-warning">Edit</a>
+                    <form method="POST" action="{{ url_for('deletee', book_id=book.id) }}" style="display:inline;">
+                        <button class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

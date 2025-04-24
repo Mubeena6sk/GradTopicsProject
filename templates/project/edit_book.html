@@ -1,0 +1,20 @@
+{% extends "projectbase.html" %}
+{% block content %}
+    <h2>Edit Book</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.title.label }} {{ form.title(class_='form-control') }}
+        </div>
+        <div class="mb-3">
+            {{ form.author.label }} {{ form.author(class_='form-control') }}
+        </div>
+        <div class="mb-3">
+            {{ form.rating.label }} {{ form.rating(class_='form-control') }}
+        </div>
+        <div class="mb-3">
+            {{ form.cover.label }} {{ form.cover(class_='form-control') }}
+        </div>
+        <button type="submit" class="btn btn-primary">Update Book</button>
+    </form>
+{% endblock %}
