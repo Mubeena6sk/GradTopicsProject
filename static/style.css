@@ -1,0 +1,55 @@
+/* static/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.navbar {
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.card {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 5px;
+}
+
+.alert-info {
+    border-radius: 5px;
+}
+
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+}
